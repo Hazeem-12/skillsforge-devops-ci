@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skillsforge-demo"
+version = "1.0.0"
+description = "Small Flask service used to demonstrate a GitHub Actions CI pipeline"
+requires-python = ">=3.10"
+dependencies = ["flask==3.1.2"]
+
+[project.scripts]
+skillsforge-demo = "app.main:run"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
